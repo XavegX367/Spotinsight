@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchAccessToken } from '../utils/APIRoutes';
 
@@ -26,6 +26,21 @@ const LoginCheck = () => {
       navigate('/login');
       return;
     }
+
+    // If login bugs, redefine this
+
+    // const refreshToken = localStorage.getItem('refresh_token');
+    // console.log(refreshToken);
+    // console.log("that one");
+    // // Check if accesscode/ refreshcode is valid
+    // const refreshCheck = refreshAccessToken(refreshToken);
+
+    // if(refreshCheck === 'error'){
+    //   localStorage.removeItem('access_token');
+    //   localStorage.removeItem('refresh_token');
+    //   navigate('/login');
+    //   return;
+    // }
 
     navigate('/')
   }
