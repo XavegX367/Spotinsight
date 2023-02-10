@@ -47,12 +47,12 @@ const Home = () => {
             <div className='flex flex-col'>
                 <div className='flex flex-col gap-y-4 mt-4'>
                     <div className='flex flex-col bg-zinc-700 rounded-md p-4'>
-                        <span className='text-2xl p-2'>Your top artists</span>
+                        <span className='text-2xl p-2 text-transparent bg-clip-text bg-gradient-to-br from-[#ff5400] via-[#e3936b] to-white'>Your top artists</span>
                         <TopItems type="artists"/>
                     </div>
 
                     <div className='flex flex-col bg-zinc-700 rounded-md p-4'>
-                        <span className='text-2xl p-2'>Songs that you just couldn't get enough of</span>
+                        <span className='text-2xl p-2 text-transparent bg-clip-text bg-gradient-to-br from-[#ff5400] via-[#e3936b] to-white'>Songs that you just couldn't get enough of</span>
                         <TopItems type="tracks"/>
                     </div>
                 </div>

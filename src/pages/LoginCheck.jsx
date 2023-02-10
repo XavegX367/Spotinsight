@@ -9,7 +9,6 @@ const LoginCheck = () => {
     checkClientCode();
   }, [])
 
-  // TODO: Removed async, readd if bugs
   const checkClientCode = () => {
     const queryParameters = new URLSearchParams(window.location.search)
     const code = queryParameters.get("code");
@@ -26,21 +25,6 @@ const LoginCheck = () => {
       navigate('/login');
       return;
     }
-
-    // If login bugs, redefine this
-
-    // const refreshToken = localStorage.getItem('refresh_token');
-    // console.log(refreshToken);
-    // console.log("that one");
-    // // Check if accesscode/ refreshcode is valid
-    // const refreshCheck = refreshAccessToken(refreshToken);
-
-    // if(refreshCheck === 'error'){
-    //   localStorage.removeItem('access_token');
-    //   localStorage.removeItem('refresh_token');
-    //   navigate('/login');
-    //   return;
-    // }
 
     navigate('/')
   }

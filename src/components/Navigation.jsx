@@ -16,8 +16,8 @@ const Navigation = ({activeNav, setActiveNav}) => {
 
     return (
         <div className='flex gap-x-4'>
-            <button className={`${(activeNav === 'insight' ? "text-white" : "text-gray-400 hover:text-white")}`} onClick={() => handleNavChange("insight")}>Insight</button>
-            <button className={`${(activeNav === 'player' ? "text-white" : "text-gray-400 hover:text-white")}`} onClick={() => handleNavChange("player")}>Player</button>
+            <button className={`${(activeNav === 'insight' ? "text-white" : "text-zinc-600 hover:text-white")} transition`} onClick={() => handleNavChange("insight")}>Insight</button>
+            <button className={`${(activeNav === 'player' ? "text-white" : "text-zinc-600 hover:text-white")} transition`} onClick={() => handleNavChange("player")}>Player</button>
         </div>
     )
 }
