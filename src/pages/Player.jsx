@@ -16,8 +16,7 @@ const Player = () => {
 
     const loadPlayerData = async () => {
         setIsLoading(true);
-
-
+        // Create API call that retrieves all state data.
         setIsLoading(false);
     }
 
@@ -27,7 +26,7 @@ const Player = () => {
             <Loader/>
             :
             <div>
-                <div className="flex w-full" >
+                <div className="flex w-full px-4" >
                     <Search search={search} setSearch={setSearch}/>
                 </div>
 
@@ -39,13 +38,11 @@ const Player = () => {
                         <Content search={search}/>
                     </div>
                 </div>
-                <div className="flex h-[15%]">
-                    <div className="justify-start">
-                        <NowPlaying/>
-                    </div>
-                    <div className="justify-center">
-                        <Controls/>
-                    </div>
+                <div className="justify-start h-[15%]">
+                    <NowPlaying/>
+                </div>
+                <div className="justify-center w-full absolute bottom-0 bg-zinc-800">
+                    <Controls/>
                 </div>
             </div>
         }

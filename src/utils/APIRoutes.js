@@ -27,6 +27,7 @@ export const PLAYER = `${host}/me/player`;
 export const TRACKS = `${host}/playlists/{{PlaylistId}}/tracks`;
 export const CURRENTLYPLAYING = `${host}/me/player/currently-playing`;
 export const SHUFFLE = `${host}/me/player/shuffle`;
+export const REPEAT = `${host}/me/player/repeat`;
 const topItemsRoute = `${host}/me/top/`;
 
 export const getUser = async (access_token) => {

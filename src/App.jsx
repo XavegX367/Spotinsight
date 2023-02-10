@@ -13,6 +13,7 @@ const App = () => {
 
   useEffect(() => {
     checkUser();
+    checkNav();
   }, [])
 
   const checkUser = async () => {
@@ -30,6 +31,13 @@ const App = () => {
         setUser(userData);
     }
 
+  }
+
+  const checkNav = () => {
+    const location = window.location.pathname.split('/');
+    if(location[1] === "player"){
+      setActiveNav('player');
+    }
   }
 
   return (
@@ -58,7 +66,7 @@ const App = () => {
         }
 
       </header>
-      <main className='sm:p-8 px-4 py-8
+      <main className='sm:p-8 py-8
       w-full bg-[#232323] min-h-[calc(100vh-73px)] text-gray-100'>
         <Routes>
           <Route path='/' element={<Home />} />
