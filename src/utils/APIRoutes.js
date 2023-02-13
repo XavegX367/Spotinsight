@@ -28,7 +28,10 @@ export const TRACKS = `${host}/playlists/{{PlaylistId}}/tracks`;
 export const CURRENTLYPLAYING = `${host}/me/player/currently-playing`;
 export const SHUFFLE = `${host}/me/player/shuffle`;
 export const REPEAT = `${host}/me/player/repeat`;
+const searchRoute = `${host}/search`
 const topItemsRoute = `${host}/me/top/`;
+export const getUserPlaylists = `${host}/me/playlists`;
+const getPlaylist = `${host}/playlists`;
 
 export const getUser = async (access_token) => {
     const { data } = await axios.get(`${host}/me?access_token=${access_token}`)
@@ -36,6 +39,31 @@ export const getUser = async (access_token) => {
         return "Something went wrong";
     })
 
+    return data;
+}
+
+export const getPlaylistContent = async (id) => {
+    const access_token = localStorage.getItem('access_token');
+    refreshAccessToken(localStorage.getItem('refresh_token'));
+    const config = {
+        headers:{
+            "Authorization": `Bearer ${access_token}`
+        }
+    }
+
+    const { data } = await axios.get(`${getPlaylist}/${id}`, config);
+    return data;
+}
+
+export const searchTracks = async (query) => {
+    refreshAccessToken(localStorage.getItem('refresh_token'));
+    const config = {
+        headers:{
+            "Authorization": `Bearer ${access_token}`
+        }
+    }
+
+    const { data } = await axios.get(`${searchRoute}?q=${query}&type=track`, config);
     return data;
 }
 

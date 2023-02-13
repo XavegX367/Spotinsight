@@ -22,7 +22,7 @@ const TopItems = (type) => {
                         topItems.map(item => (
                             <div key={item.id} className='flex flex-col hover:scale-105 scale-100 transition duration-300 ease-in-out hover:shadow-lg'>
                                 <a target='_blank' href={item.external_urls.spotify}>
-                                    <img className='w-[46vh] h-[46vh]' src={item.images[0].url} />
+                                    <img className='max-w-full' src={item.images[0].url} />
                                     <div className='p-2 mb-4 text-xl'>{item.name}</div>
                                 </a>
                             </div>
@@ -30,16 +30,16 @@ const TopItems = (type) => {
                         }
                     </div> 
                 :
-                <div className='grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center'>
-                {
-                topItems.map(item => (
-                    <div key={item.id} className='flex flex-col hover:scale-105 scale-100 transition duration-300 ease-in-out hover:shadow-lg'>
-                        <a target='_blank' href={item.external_urls.spotify}>
-                            <img className='max-w-full' src={item.album.images[0].url} />
-                            <div className='p-2 mb-4 text-xl'>{item.name}</div>
-                        </a>
-                    </div>
-                ))
+                    <div className='grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center'>
+                    {
+                    topItems.map(item => (
+                        <div key={item.id} className='flex flex-col hover:scale-105 scale-100 transition duration-300 ease-in-out hover:shadow-lg'>
+                            <a target='_blank' href={item.external_urls.spotify}>
+                                <img className='max-w-full' src={item.album.images[0].url} />
+                                <div className='p-2 mb-4 text-xl'>{item.name}</div>
+                            </a>
+                        </div>
+                    ))
                 }
             </div> 
             }

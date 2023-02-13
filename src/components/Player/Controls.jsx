@@ -45,7 +45,7 @@ const Controls = () => {
     }
 
     return <>
-        <div className='flex flex-col select-none'>
+        <div className='flex flex-col select-none mb-4 py-2 text-lg'>
             <div className='flex justify-center gap-12'>
                 <div>
                     <button onClick={() => shuffle()} className={`hover:text-white text-gray-400  transition ${isShuffle ? 'text-orange-600': ''}`}>
@@ -53,7 +53,7 @@ const Controls = () => {
                     </button>
                 </div>
 
-                <div div className='flex gap-x-8'>
+                <div className='flex gap-x-8'>
                     <div>
                         <button onClick={() => previousTrack()} className='hover:text-white text-gray-400 transition'>
                             <FontAwesomeIcon icon={faArrowLeft}/>
@@ -78,7 +78,6 @@ const Controls = () => {
                         <FontAwesomeIcon icon={faRepeat}/>
                     </button>
                 </div>
-
 
             </div>
         </div>

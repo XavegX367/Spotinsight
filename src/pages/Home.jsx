@@ -15,7 +15,7 @@ const Home = () => {
     }, []);
 
     const verifyData = async () => {
-    // wait 155ms the localstorage might have not been filled yet
+    // wait 200ms the localstorage might have not been filled yet
         await delay(200);
         if(localStorage.getItem('refresh_token') === undefined || localStorage.getItem('refresh_token') === "" || localStorage.getItem('refresh_token') === null){
             navigate('/login');
@@ -40,6 +40,7 @@ const Home = () => {
             setUser(userData);
         }
     }
+    
     return (
     <>
         {

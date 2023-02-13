@@ -66,8 +66,7 @@ const App = () => {
         }
 
       </header>
-      <main className='sm:p-8 py-8
-      w-full bg-[#232323] min-h-[calc(100vh-73px)] text-gray-100'>
+      <main className='py-3 w-full bg-[#232323] min-h-[calc(100vh-73px)] text-gray-100'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/player' element={<Player />} />
