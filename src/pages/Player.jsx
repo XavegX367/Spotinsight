@@ -8,12 +8,13 @@ import Playlists from '../components/Player/Playlists';
 import Controls from '../components/Player/Controls';
 import NowPlaying from '../components/Player/NowPlaying';
 import Content from '../components/Player/Content';
+import SpotifyPlayer from 'react-spotify-web-playback';
 
 const Player = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [search, setSearch] = useState("");
     const [selectedPlaylist, setselectedPlaylist] = useState("");
-    const [currentlyPlaying, setCurrentlyPlaying] = useState("")
+    const [currentlyPlaying, setCurrentlyPlaying] = useState("spotify:track:1e7gC7NhFSK0lBeoLISvKz")
     
     const navigate = useNavigate();
     useEffect(() => {
@@ -60,7 +61,7 @@ const Player = () => {
             :
             <div className='select-none'>
                 <div className="flex w-full px-2" >
-                    <Search search={search} setSearch={setSearch}/>
+                    <Search search={search} setSearch={setSearch} setCurrentlyPlaying={setCurrentlyPlaying}/>
                 </div>
 
                 <div className="flex h-[80%]">
@@ -68,14 +69,26 @@ const Player = () => {
                         <Playlists setselectedPlaylist={setselectedPlaylist} selectedPlaylist={selectedPlaylist}/>
                     </div>
                     <div className="w-4/6">
-                        <Content selectedPlaylist={selectedPlaylist} setCurrentlyPlaying={setCurrentlyPlaying}/>
+                        <Content selectedPlaylist={selectedPlaylist} currentlyPlaying={currentlyPlaying} setCurrentlyPlaying={setCurrentlyPlaying}/>
                     </div>
                 </div>
-                <div className="text-center bottom-14 fixed w-screen">
+                {/* <div className="text-center bottom-14 fixed w-screen">
                     <NowPlaying currentlyPlaying={currentlyPlaying}/>
-                </div>
+                </div> */}
                 <div className="justify-center w-full fixed bottom-0 bg-zinc-800">
-                    <Controls/>
+                <SpotifyPlayer
+                    token={localStorage.getItem('access_token')}
+                    uris={[currentlyPlaying]}
+                    styles={{
+                        activeColor: '#fff',
+                        bgColor: '#333',
+                        color: '#fff',
+                        loaderColor: '#fff',
+                        sliderColor: '#ff5400',
+                        trackArtistColor: '#ccc',
+                        trackNameColor: '#fff',
+                    }}
+                />
                 </div>
             </div>
         }

@@ -18,8 +18,6 @@ const Content = ({selectedPlaylist, setCurrentlyPlaying}) => {
         setTracks(data.tracks.items)
     }
 
-
-
     return (
         <div>
             {

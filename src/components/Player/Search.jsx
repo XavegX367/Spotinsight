@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Search = ({ setSearch, search }) => {
+const Search = ({ setSearch, search, setCurrentlyPlaying }) => {
     const handleInputChange = async (event) => {
         setSearch(event.target.value);
+    }
+
+    const handleSongChange = async () => {
+        //TODO: update setCurrentlyPlaying to clicked track uri
     }
     return (
         <div className='flex w-1/2 mb-2'>
