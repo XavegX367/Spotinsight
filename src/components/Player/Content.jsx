@@ -23,27 +23,27 @@ const Content = ({selectedPlaylist, setCurrentlyPlaying}) => {
             {
                 (currentPlaylist !== "")
                 ?
-                    <div className='flex flex-col'>
-                        <div className='flex'>
-                            <div>
-                                <img src={currentPlaylist.images[0].url} className='w-32'/>
-                            </div>
-                            <div className='text-xl mt-12 ml-4'>
-                                {currentPlaylist.name}
-                            </div>
+                <div className='flex flex-col'>
+                    <div className='flex'>
+                        <div>
+                            <img src={currentPlaylist.images[0].url} className='w-32'/>
                         </div>
-
-                        <div className='mt-2'>
-                            {
-                                // console.log(tracks)
-                                tracks.map(track => (  
-                                    <Track setCurrentlyPlaying={setCurrentlyPlaying} track={track} key={track.track.id}/>
-                                ))
-                            }
+                        <div className='text-xl mt-12 ml-4'>
+                            {currentPlaylist.name}
                         </div>
                     </div>
+
+                    <div className='mt-2'>
+                        {
+                            // console.log(tracks)
+                            tracks.map(track => (  
+                                <Track setCurrentlyPlaying={setCurrentlyPlaying} track={track} key={track.track.id}/>
+                            ))
+                        }
+                    </div>
+                </div>
                 :
-                    "No playlist selected"
+                "No playlist selected"
             }
         </div>
     )

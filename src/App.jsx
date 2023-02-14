@@ -17,7 +17,7 @@ const App = () => {
   }, [])
 
   const checkUser = async () => {
-    await delay(200);
+    await delay(350);
     if(localStorage.getItem('access_token') === null){
       return;
     }
@@ -48,7 +48,7 @@ const App = () => {
         <Link to="/" className="flex" >
           <img src={logo_symbol} alt="logo" className='w-10 
           object-contain'/>
-          <img src={logo_text} alt="logo" className='w-32 
+          <img src={logo_text} alt="logo" className='w-32 md:block hidden
           object-contain mt-1 ml-2'/>
         </Link>
 

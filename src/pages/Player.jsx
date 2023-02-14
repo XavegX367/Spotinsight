@@ -23,7 +23,7 @@ const Player = () => {
 
     const verifyData = async () => {
     // wait 200ms the localstorage might have not been filled yet
-        await delay(200);
+        await delay(350);
         if(localStorage.getItem('refresh_token') === undefined || localStorage.getItem('refresh_token') === "" || localStorage.getItem('refresh_token') === null){
             navigate('/login');
             return;

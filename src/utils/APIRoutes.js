@@ -10,7 +10,7 @@ authUrl += `?client_id=${client_id}`;
 authUrl += `&response_type=code`;
 authUrl += `&redirect_uri=${encodeURI(redirect_uri)}`;
 authUrl += `&show_dialog=true`;
-authUrl += `&scope=user-read-private user-top-read user-read-email user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private`;
+authUrl += `&scope=user-top-read user-modify-playback-state user-read-email user-read-private user-read-playback-position streaming user-read-playback-state playlist-read-private`;
 
 export const connectRoute = authUrl;
 
@@ -130,7 +130,8 @@ export function requestAuthorization(){
     url += "&response_type=code";
     url += "&redirect_uri=" + encodeURI(redirect_uri);
     url += "&show_dialog=true";
-    url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
+    url += `&scope=user-top-read user-modify-playback-state user-read-email user-read-private user-read-playback-position streaming user-read-playback-state playlist-read-private`;
+
     window.location.href = url; // Show Spotify's authorization screen
 }
 
