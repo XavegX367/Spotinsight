@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const AUTHORIZE = import.meta.env.VITE_SPOTIFY_AUTHORIZE;
-export const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-export const client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
-export const redirect_uri = import.meta.env.VITE_SPOTIFY_REDIRECT_URL;
+export let client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+export let client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
+export let redirect_uri = import.meta.env.VITE_SPOTIFY_REDIRECT_URL;
 
 let authUrl = AUTHORIZE;
 authUrl += `?client_id=${client_id}`;
